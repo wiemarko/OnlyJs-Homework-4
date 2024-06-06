@@ -1,3 +1,6 @@
+body {
+    background-color: black;
+}
 .navbar-brand img {
     max-height: 80px;
 }
@@ -11,7 +14,7 @@
     margin: 0 auto;
 }
 
-html {
+/* html {
     height: 100%;
     overflow: hidden;
     background: radial-gradient(ellipse at bottom, black 0%,#090a0f 100%);
@@ -582,4 +585,4 @@ html {
     to {
         transform: translateY(-2000px);
     }
-}
+} */
