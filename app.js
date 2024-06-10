@@ -140,9 +140,6 @@
   }
     
 
-    for (let i = 0; i < characters.length; i++){
+    for (let i = 19; i < characters.length; i++){
         console.log(characters);
     }  
-    
-
-    // şuraya bi commit basayım
