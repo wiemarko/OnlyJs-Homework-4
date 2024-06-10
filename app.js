@@ -144,3 +144,5 @@
         console.log(characters);
     }  
     
+
+    // şuraya bi commit basayım
