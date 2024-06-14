@@ -121,25 +121,36 @@
       }
     ]
 
-    function renderCharacters() {
-      if (!document.querySelector('.row')) {
-          const newDiv = document.createElement('div');
-          newDiv.className = 'row';
-          document.getElementById("main-container").appendChild(newDiv);
-          newDiv.innerHTML = `
-              <div class="card" style="width: 18rem;">
-                  <img class="card-img-top" src="..." alt="Card image cap">
-                  <div class="card-body">
-                      <h5 class="card-title">Card title</h5>
-                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  </div>
-              </div>`;
-      } else {
-          console.log('Bir div zaten mevcut.');
-      }
-  }
-    
-
-    for (let i = 19; i < characters.length; i++){
-        console.log(characters);
-    }  
+    document.addEventListener("DOMContentLoaded", () => {
+      const toggleButton = document.getElementById("toggleButton");
+      const characterContainer = document.getElementById("characterContainer");
+      let charactersVisible = false;
+  
+      toggleButton.addEventListener("click", () => {
+          if (charactersVisible) {
+              characterContainer.innerHTML = '';
+              toggleButton.textContent = "Karakterleri Göster";
+              toggleButton.classList.remove("btn-danger");
+              toggleButton.classList.add("btn-success");
+          } else {
+              characters.forEach(character => {
+                  const characterCard = `
+                      <div class="col-md-4">
+                          <div class="card">
+                              <img src="${character.image}" class="card-img-top" alt="${character.name}">
+                              <div class="card-body">
+                                  <h5 class="card-title">${character.name}</h5>
+                                  <p class="card-text">Homeworld: ${character.homeworld}</p>
+                              </div>
+                          </div>
+                      </div>
+                  `;
+                  characterContainer.innerHTML += characterCard;
+              });
+              toggleButton.textContent = "Karakterleri Gizle";
+              toggleButton.classList.remove("btn-success");
+              toggleButton.classList.add("btn-danger");
+          }
+          charactersVisible = !charactersVisible;
+      });
+  });
