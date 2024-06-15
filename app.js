@@ -228,6 +228,8 @@ function renderFilters() {
   });
 }
 
+
+// Müzik butonu 
 let play = document.getElementById("music");
 let audio = new Audio("Star Wars - The Imperial March (Darth Vaders Theme).mp3");
 let isPlaying = false;
