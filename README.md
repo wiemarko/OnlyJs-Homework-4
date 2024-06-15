@@ -11,5 +11,6 @@
 <p align="center">Css</p>
 <p align="center">Bootstrap</p>
 <p align="center">JavaScript</p>
+<p align="center">Font Awesome</p>
 
 
