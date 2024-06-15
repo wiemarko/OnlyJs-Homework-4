@@ -200,7 +200,7 @@ function renderFilters() {
     input.value = element;
     input.className = "form-check-input";
     if (element === "all") {
-      input.checked.true;
+      input.checked = true;
     }
     const label = document.createElement("label");
     label.htmlFor = element;
@@ -227,3 +227,19 @@ function renderFilters() {
     });
   });
 }
+
+let play = document.getElementById("music");
+let audio = new Audio("Star Wars - The Imperial March (Darth Vaders Theme).mp3");
+let isPlaying = false;
+
+function playMusic() {
+    if (isPlaying) {
+        audio.pause();
+        audio.currentTime = 0;
+        isPlaying = false;
+    } else {
+        audio.play();
+        isPlaying = true;
+    }
+}
+play.addEventListener("click", playMusic);
