@@ -1,1 +1,1 @@
-<h1 style="align:center"> STAR WARS </h1>
+<h1 style="align=center"> STAR WARS </h1>
